@@ -1,5 +1,6 @@
 /* AuthForm.module.css */
 
+/* Основной контейнер для формы */
 .container {
     display: flex;
     flex-direction: column;
@@ -10,6 +11,7 @@
     padding: 20px;
   }
   
+  /* Форма авторизации */
   .form {
     background: white;
     padding: 20px;
@@ -19,26 +21,35 @@
     max-width: 400px;
   }
   
+  /* Стили для инпутов */
   .input {
     width: 100%;
-    padding: 10px;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding: 12px 15px; /* Добавлены отступы для улучшения удобства ввода */
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+    box-sizing: border-box; /* Учитываем отступы в ширине поля */
   }
   
+  /* Фокусировка на инпуте */
   .input:focus {
     border-color: #007bff;
     outline: none;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   }
   
+  /* Стили для плейсхолдера */
+  .input::placeholder {
+    padding-left: 8px; /* Отступ от левого края для плейсхолдера */
+    color: #888; /* Цвет плейсхолдера */
+    font-style: italic; /* Курсив для плейсхолдера */
+  }
+  
+  /* Стили для кнопок */
   .button {
     width: 100%;
-    padding: 10px;
+    padding: 12px 15px; /* Отступы внутри кнопки */
     margin-bottom: 15px;
     background-color: #007bff;
     color: white;
@@ -53,6 +64,7 @@
     background-color: #0056b3;
   }
   
+  /* Стили для сообщений об ошибках */
   .alert {
     margin-top: 10px;
     color: red;
@@ -60,10 +72,30 @@
     text-align: center;
   }
   
+  /* Стили для сообщений об успехе */
   .success {
     margin-top: 10px;
     color: green;
     font-size: 14px;
     text-align: center;
+  }
+  
+  /* Дополнительные стили для вспомогательных текстов, если они есть */
+  .helper-text {
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* Стили для ссылок */
+  .link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
   }
   
