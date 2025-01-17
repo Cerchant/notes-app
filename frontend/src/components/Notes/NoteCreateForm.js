@@ -13,14 +13,14 @@ const NoteCreateForm = ({ onAddNote, onClose }) => {
       alert('Title is required');
       return;
     }
+
     try {
-      console.log(token);
       const { data: newNote } = await api.post('/notes', note, {
         headers: { Authorization: `Bearer ${token}` },
       });
       onAddNote(newNote); // Передать новую заметку в родительский компонент
       setNote({ title: '', content: '' }); // Очистить форму
-      //   onClose(); // Закрыть форму
+      onClose(); // Закрыть модальное окно
     } catch (error) {
       console.error('Error creating note:', error);
       alert('Failed to create note');

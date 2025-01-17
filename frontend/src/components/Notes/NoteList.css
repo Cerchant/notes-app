@@ -1,96 +1,172 @@
+/* NoteList.css */
+
+/* Основные стили для контейнера заметок */
 .notes-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  gap: 15px;
+  margin-top: 20px;
+  align-items: center; /* Центрируем все элементы по горизонтали */
+  justify-content: center; /* Центрируем все элементы по вертикали */
+  padding: 0 20px; /* Отступы по бокам, чтобы элементы не прилипали к краям */
 }
 
+/* Стиль для отдельных заметок */
 .note-item {
-  width: 80%;
-  max-width: 600px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 20px;
+  padding: 15px;
   background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* Ограничиваем максимальную ширину заметки */
+  margin-bottom: 20px; /* Отступ между заметками */
 }
 
-.tag-filters {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
+/* Стили для тегов в заметке */
+.note-tags {
+  margin: 10px;
 }
 
 .tag {
   display: inline-block;
-  padding: 5px 10px;
-  border-radius: 12px;
-  font-size: 14px;
-  cursor: pointer;
   background-color: #e0e0e0;
   color: #555;
-  transition: all 0.2s;
-}
-
-.tag.active {
-  background-color: #007bff;
-  color: white;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.6);
+  padding: 5px 10px;
+  border-radius: 12px;
+  margin-right: 5px;
+  font-size: 14px;
+  cursor: pointer;
 }
 
 .tag:hover {
-  background-color: #0056b3;
+  background-color: #007bff;
   color: white;
 }
 
+.delete-tag-button {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+  margin-left: 5px;
+}
 
+.delete-tag-button:hover {
+  color: #cc0000;
+}
+
+/* Стили для фильтров тегов */
+.tag-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.tag-filters .tag {
+  background-color: #f1f1f1;
+  padding: 5px 15px;
+  font-size: 14px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.tag-filters .tag.active {
+  background-color: #007bff;
+  color: white;
+}
+
+button {
+  background-color: #f1f1f1;
+  padding: 5px 15px;
+  font-size: 14px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Форма создания и обновления заметки */
 .add-note-button {
   font-size: 24px;
   width: 50px;
   height: 50px;
-  border-radius: 50%;
   background-color: #007bff;
   color: white;
-  border: none;
-  cursor: pointer;
+  border-radius: 50%;
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .add-note-button:hover {
   background-color: #0056b3;
 }
 
+/* Стиль для модальных окон */
 .modal {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Затемнение фона */
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000; /* Обеспечиваем, чтобы модальное окно было поверх всего */
 }
 
 .modal-content {
-  background: white;
+  background-color: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 90%;
-  max-width: 500px;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1001; /* Обеспечиваем, чтобы контент модального окна был сверху */
 }
 
+/* Кнопка закрытия для модальных окон */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+/* Стили для кнопок в блоке действий заметки */
+.note-actions {
+  display: flex;
+  gap: 10px; /* Расстояние между кнопками */
+  margin-top: 10px;
+}
+
+.note-actions button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.note-actions button:hover {
+  background-color: #0056b3;
+}

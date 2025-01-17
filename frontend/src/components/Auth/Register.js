@@ -17,10 +17,11 @@ const Register = () => {
       return;
     }
     try {
-      await api.post('/users/register', {
+      const response = await api.post('/users/register', {
         username: credentials.username,
         password: credentials.password,
       });
+      login(response.data.token);
       setMessage('Registration successful');
     } catch (error) {
       if (error.response && error.response.status === 400) {

@@ -111,6 +111,7 @@ const NoteList = () => {
                     )
                 )
             );
+            console.log(remainingTags);
             setAllTags(remainingTags);
         } catch (error) {
             console.error('Error deleting tag:', error);

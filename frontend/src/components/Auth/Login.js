@@ -14,7 +14,6 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await api.post('/users/login', credentials);
-      console.log(response.data.token);
       login(response.data.token);
       setMessage('Login successful');
     } catch (error) {

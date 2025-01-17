@@ -1,3 +1,6 @@
+/* NoteForm.css */
+
+/* Общие стили для форм (создания и обновления заметки) */
 .note-form,
 .tag-form {
   display: flex;
@@ -14,13 +17,12 @@
 .tag-form input {
   width: 100%;
   padding: 10px;
-  padding-right: 0px;
-  padding-left: 0px;
   font-size: 16px;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
+/* Стили для кнопок формы */
 .form-actions {
   display: flex;
   justify-content: flex-end;
@@ -51,69 +53,5 @@
 
 .form-actions button[type='button']:hover {
   background-color: #999;
-}
-
-.note-item {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 10px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.add-note-button {
-  font-size: 24px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.add-note-button:hover {
-  background-color: #0056b3;
-}
-
-.add-tag-button {
-  background-color: #28a745;
-  color: white;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.add-tag-button:hover {
-  background-color: #218838;
-}
-
-.note-tags {
-  margin-top: 10px;
-}
-
-.tag {
-  display: inline-block;
-  background-color: #e0e0e0;
-  color: #555;
-  padding: 5px 10px;
-  border-radius: 12px;
-  margin-right: 5px;
-  font-size: 14px;
-}
-
-.note-form textarea {
-  width: 100%;
-  max-width: 100%;
-  height: 100px;
-  max-height: 200px;
-  resize: vertical;
 }
 
