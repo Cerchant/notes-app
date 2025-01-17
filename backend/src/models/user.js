@@ -1,8 +1,11 @@
 // Db
 const { DataTypes } = require('sequelize')
-const db = require('../db.js')
+const db = require('../../database.js')
 
-const User = db.define('users',
+// Получение экземпляра Sequelize для работы с моделями
+const sequelize = db.getSequelizeInstance();
+
+const User = sequelize.define('users',
   // Описание таблиц
   {
     user_id: {

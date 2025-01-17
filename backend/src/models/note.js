@@ -1,9 +1,12 @@
 const { DataTypes } = require('sequelize');
-const db = require('../db.js');
-const Users = require('./user');
-// const Tag = require('./tag');
+const db = require('../../database.js');
+const Users = require('./user.js');
 
-const Note = db.define(
+// Получение экземпляра Sequelize для работы с моделями
+const sequelize = db.getSequelizeInstance();
+
+
+const Note = sequelize.define(
   'note', // Используйте единственное число для имени модели
   {
     note_id: {
